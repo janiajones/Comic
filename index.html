@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Underwater Scene</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="frames-container">
+    <!-- Top Frame: Contains the mermaid -->
+    <div class="frame" id="top-frame">
+      <video class="background-video" autoplay muted loop>
+        <source src="underwater.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <div id="mermaid-container">
+        <img id="mermaid" src="mermaid.png" alt="Swimming Mermaid">
+        <div class="speech-bubble">You are not from these waters. What brings you to the deep, land-dweller?</div>
+      </div>
+    </div>
+
+    <!-- Bottom Frame: Contains the shark -->
+    <div class="frame" id="bottom-frame">
+      <video class="background-video" autoplay muted loop>
+        <source src="underwater.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <div id="shark-container">
+        <img id="shark" src="shark.png" alt="Swimming Shark">
+        <div class="speech-bubble">You are not from these waters. What brings you to the deep, land-dweller?</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

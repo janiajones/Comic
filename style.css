@@ -1,0 +1,98 @@
+/* Reset Default Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Allow scrolling between frames */
+html, body {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+/* Container holding both frames */
+#frames-container {
+  display: block;
+  width: 100%;
+}
+
+/* Each frame takes the full viewport height */
+.frame {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background video in each frame */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Mermaid & Shark Containers */
+#mermaid-container, #shark-container {
+  position: absolute;
+  top: 55%;
+  left: -10%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: swim 12s linear infinite alternate;
+  z-index: 5;
+}
+
+/* Mermaid & Shark Images */
+#mermaid, #shark {
+  width: 250px;
+  cursor: pointer;
+  z-index: 6;
+}
+
+/* Circular Speech Bubble */
+.speech-bubble {
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  overflow-wrap: break-word;
+}
+
+/* Swim Animation */
+@keyframes swim {
+  0% {
+    left: -10%;
+    transform: translateY(-50%) scaleX(1);
+  }
+  50% {
+    top: 60%;
+  }
+  100% {
+    left: 110%;
+    transform: translateY(-50%) scaleX(1);
+  }
+}
