@@ -40,7 +40,7 @@ html, body {
   z-index: -1;
 }
 
-/* Mermaid & Shark Containers – removed CSS animation in favor of JS movement */
+/* Mermaid & Shark Containers */
 #mermaid-container, 
 #shark-container {
   position: absolute;
@@ -58,11 +58,11 @@ html, body {
   z-index: 6;
 }
 
-/* Traveller Containers – moved down so the speech bubble is fully visible */
+/* Traveller Containers */
 #traveller-container-top,
 #traveller-container-bottom {
   position: absolute;
-  top: 70%;  /* Increased from 50% to 70% */
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
@@ -71,17 +71,59 @@ html, body {
   align-items: center;
 }
 
-/* Traveller images – a bit smaller */
+/* Traveller images */
 #traveller-top, #traveller-bottom {
   width: 200px;
   cursor: pointer;
   z-index: 11;
 }
 
+/* Floating Images (Starfish & Turtle) */
+#starfish, #turtle {
+  position: fixed;
+  bottom: 20px;  /* Moves the images to the bottom */
+  width: 140px;  /* Increased size */
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  z-index: 9999;
+}
+
+/* Position Starfish on the Bottom Left */
+#starfish {
+  left: 20px;
+}
+
+/* Position Turtle on the Bottom Right */
+#turtle {
+  right: 20px;
+}
+
+/* Hover Effect: Floating Up */
+#starfish:hover, #turtle:hover {
+  transform: translateY(-12px) scale(1.1);
+}
+
+/* Character Bubble at the Top Left of Both Frames */
+.char-bubble {
+  position: fixed;
+  top: 15px; /* Adjust top spacing */
+  left: 15px; /* Adjust left spacing */
+  width: 220px; /* Increased size */
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  z-index: 9999;
+}
+
+/* Glow Effect on Hover */
+.char-bubble:hover {
+  transform: scale(1.3);
+  filter: brightness(1.8);
+}
+
 /* Comic-Style Speech Bubble */
 .speech-bubble {
   position: absolute;
-  bottom: 130%; /* Positioned above the character */
+  bottom: 130%;
   left: 50%;
   transform: translateX(-50%);
   width: 250px;

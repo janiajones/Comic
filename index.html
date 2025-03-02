@@ -2,13 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Underwater Scene</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+
   <div id="frames-container">
-    <!-- Top Frame: Contains the mermaid and traveler -->
+    <!-- Character Bubble (top-left) -->
+    <img class="char-bubble" src="char_bubble.png" alt="Character Bubble" />
+
+    <!-- Floating Images (bottom-left & bottom-right) -->
+    <img id="starfish" src="starfish.png" alt="Starfish" />
+    <img id="turtle" src="turtle.png" alt="Turtle" />
+
+    <!-- Top Frame: Mermaid & Traveler -->
     <div class="frame" id="top-frame">
       <video class="background-video" autoplay muted loop>
         <source src="underwater.mp4" type="video/mp4" />
@@ -23,7 +31,7 @@
         </div>
       </div>
 
-      <!-- Traveller Container (Top Frame) -->
+      <!-- Traveler Container (Top Frame) -->
       <div id="traveller-container-top">
         <img id="traveller-top" src="traveller.png" alt="Mysterious Traveler" />
         <div class="speech-bubble">
@@ -32,7 +40,7 @@
       </div>
     </div>
 
-    <!-- Bottom Frame: Contains the shark and traveler -->
+    <!-- Bottom Frame: Shark & Traveler -->
     <div class="frame" id="bottom-frame">
       <video class="background-video" autoplay muted loop>
         <source src="underwater.mp4" type="video/mp4" />
@@ -47,11 +55,11 @@
         </div>
       </div>
 
-      <!-- Traveller Container (Bottom Frame) -->
+      <!-- Traveler Container (Bottom Frame) -->
       <div id="traveller-container-bottom">
         <img id="traveller-bottom" src="traveller.png" alt="Mysterious Traveler" />
         <div class="speech-bubble">
-          This world is unlike anything I’ve ever seen...
+          I—I mean no harm! I only wish to explore.
         </div>
       </div>
     </div>
