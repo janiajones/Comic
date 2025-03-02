@@ -9,21 +9,24 @@
 <body>
 
   <div id="frames-container">
-    <!-- Character Bubble (top-left) -->
-    <img class="char-bubble" src="char_bubble.png" alt="Character Bubble" />
 
-    <!-- Floating Images (bottom-left & bottom-right) -->
-    <img id="starfish" src="starfish.png" alt="Starfish" />
-    <img id="turtle" src="turtle.png" alt="Turtle" />
-
-    <!-- Top Frame: Mermaid & Traveler -->
+    <!-- Top Frame -->
     <div class="frame" id="top-frame">
       <video class="background-video" autoplay muted loop>
         <source src="underwater.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
-      <!-- Mermaid Container -->
+      <!-- Char Bubble (Moved to Top Right) -->
+      <img id="char-bubble-top" src="char_bubble.png" alt="Character Bubble" />
+
+      <!-- Starfish -->
+      <img id="starfish-top" src="starfish.png" alt="Starfish" />
+
+      <!-- Turtle -->
+      <img id="turtle-top" src="turtle.png" alt="Turtle" />
+
+      <!-- Mermaid -->
       <div id="mermaid-container">
         <img id="mermaid" src="mermaid.png" alt="Swimming Mermaid" />
         <div class="speech-bubble">
@@ -31,23 +34,35 @@
         </div>
       </div>
 
-      <!-- Traveler Container (Top Frame) -->
+      <!-- Traveler -->
       <div id="traveller-container-top">
         <img id="traveller-top" src="traveller.png" alt="Mysterious Traveler" />
         <div class="speech-bubble">
           This world is unlike anything I’ve ever seen...
         </div>
       </div>
+      
+      <button class="audio-button" id="top-audio-button">Play Water Sound</button>
+      <audio id="top-audio" src="water_sound.mp3"></audio>
     </div>
 
-    <!-- Bottom Frame: Shark & Traveler -->
+    <!-- Bottom Frame -->
     <div class="frame" id="bottom-frame">
       <video class="background-video" autoplay muted loop>
         <source src="underwater.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      
+      <!-- Char Bubble (Moved to Top Right) -->
+      <img id="char-bubble-bottom" src="char_bubble.png" alt="Character Bubble" />
 
-      <!-- Shark Container -->
+      <!-- Starfish -->
+      <img id="starfish-bottom" src="starfish.png" alt="Starfish" />
+
+      <!-- Turtle -->
+      <img id="turtle-bottom" src="turtle.png" alt="Turtle" />
+
+      <!-- Shark -->
       <div id="shark-container">
         <img id="shark" src="shark.png" alt="Swimming Shark" />
         <div class="speech-bubble">
@@ -55,13 +70,16 @@
         </div>
       </div>
 
-      <!-- Traveler Container (Bottom Frame) -->
+      <!-- Traveler -->
       <div id="traveller-container-bottom">
         <img id="traveller-bottom" src="traveller.png" alt="Mysterious Traveler" />
         <div class="speech-bubble">
           I—I mean no harm! I only wish to explore.
         </div>
       </div>
+
+      <button class="audio-button" id="bottom-audio-button">Play Water Sound</button>
+      <audio id="bottom-audio" src="water_sound.mp3"></audio>
     </div>
   </div>
 

@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     travellerSpeechBubbleBottom.textContent = travellerDialogueBottom[travellerIndexBottom];
   });
 
-  // Mermaid & Shark Movement Logic
+  // === Mermaid & Shark Movement Logic ===
   let mermaidX = window.innerWidth - mermaid.clientWidth;
   let mermaidDirection = -1;
   let sharkX = 0;
@@ -90,4 +90,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   moveMermaid();
   moveShark();
+
+  // === Audio Button Logic for Each Frame ===
+  const topAudioButton = document.getElementById("top-audio-button");
+  const topAudio = document.getElementById("top-audio");
+  const bottomAudioButton = document.getElementById("bottom-audio-button");
+  const bottomAudio = document.getElementById("bottom-audio");
+
+  // Toggles audio in top frame
+  topAudioButton.addEventListener("click", () => {
+    if (topAudio.paused) {
+      topAudio.play();
+      topAudioButton.textContent = "Pause Water Sound";
+    } else {
+      topAudio.pause();
+      topAudioButton.textContent = "Play Water Sound";
+    }
+  });
+
+  // Toggles audio in bottom frame
+  bottomAudioButton.addEventListener("click", () => {
+    if (bottomAudio.paused) {
+      bottomAudio.play();
+      bottomAudioButton.textContent = "Pause Water Sound";
+    } else {
+      bottomAudio.pause();
+      bottomAudioButton.textContent = "Play Water Sound";
+    }
+  });
 });

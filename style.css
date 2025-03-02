@@ -24,7 +24,7 @@ html, body {
 /* Each frame takes full viewport height */
 .frame {
   width: 100%;
-  height: 100vh;
+  height: 100vh; 
   position: relative;
   overflow: hidden;
 }
@@ -78,49 +78,50 @@ html, body {
   z-index: 11;
 }
 
-/* Floating Images (Starfish & Turtle) */
-#starfish, #turtle {
-  position: fixed;
-  bottom: 20px;  /* Moves the images to the bottom */
-  width: 140px;  /* Increased size */
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-  z-index: 9999;
-}
-
-/* Position Starfish on the Bottom Left */
-#starfish {
-  left: 20px;
-}
-
-/* Position Turtle on the Bottom Right */
-#turtle {
+/* Char Bubble (Now at Top Right in Both Frames) */
+#char-bubble-top, #char-bubble-bottom {
+  position: absolute;
+  top: 20px;
   right: 20px;
-}
-
-/* Hover Effect: Floating Up */
-#starfish:hover, #turtle:hover {
-  transform: translateY(-12px) scale(1.1);
-}
-
-/* Character Bubble at the Top Left of Both Frames */
-.char-bubble {
-  position: fixed;
-  top: 15px; /* Adjust top spacing */
-  left: 15px; /* Adjust left spacing */
-  width: 220px; /* Increased size */
+  width: 220px;
   cursor: pointer;
   transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
   z-index: 9999;
 }
-
-/* Glow Effect on Hover */
-.char-bubble:hover {
+#char-bubble-top:hover, #char-bubble-bottom:hover {
   transform: scale(1.3);
   filter: brightness(1.8);
 }
 
-/* Comic-Style Speech Bubble */
+/* Starfish */
+#starfish-top, #starfish-bottom {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 140px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  z-index: 9999;
+}
+#starfish-top:hover, #starfish-bottom:hover {
+  transform: translateY(-12px) scale(1.1);
+}
+
+/* Turtle */
+#turtle-top, #turtle-bottom {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 140px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  z-index: 9999;
+}
+#turtle-top:hover, #turtle-bottom:hover {
+  transform: translateY(-12px) scale(1.1);
+}
+
+/* Speech Bubbles */
 .speech-bubble {
   position: absolute;
   bottom: 130%;
@@ -137,32 +138,5 @@ html, body {
   border-radius: 30px;
   box-shadow: 4px 4px 0px black;
   z-index: 10000;
-  overflow-wrap: break-word;
   font-family: "Comic Sans MS", "Bangers", cursive;
-}
-
-/* Speech Bubble Tail */
-.speech-bubble::after {
-  content: "";
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-top: 15px solid black;
-}
-.speech-bubble::before {
-  content: "";
-  position: absolute;
-  bottom: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
-  border-top: 12px solid white;
 }
