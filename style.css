@@ -14,7 +14,81 @@ html, body {
   scroll-behavior: smooth;
   font-family: "Comic Sans MS", "Bangers", cursive;
 }
+/* 
+Navigation Bar 
+*/
+#nav{
+  /* Fix navigation bar at the top middle of the web page */
+    position: fixed;
+    /* calc() CSS function calculates numbers of different units */
+    left: calc(50% - 50px);
+    top: 20px;
+    /* Display nav bar on top of everything else */
+    z-index: 1;
+}
 
+.nav-btn{
+  width: 20px;
+    height: 20px;
+    /* Make square div into a circle */
+    border-radius: 50%;
+    background-color: white;
+    display: inline-block;
+    cursor: pointer;
+    /* transition changes in background-color */
+    transition: background-color 0.5s;
+}
+
+/* When a nav-btn is hovered on, set background-color to black */
+.nav-btn:hover{
+  background-color: #ff3131;
+}
+
+/* CSS */
+button {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .25rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+button:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+#open-book-button{
+  position: absolute;
+  top: 485px;
+  left: 1075px;
+}
 /* Container holding both frames */
 #frames-container {
   display: block;
@@ -139,4 +213,24 @@ html, body {
   box-shadow: 4px 4px 0px black;
   z-index: 10000;
   font-family: "Comic Sans MS", "Bangers", cursive;
+}
+#scene1, #book, #finalScene {
+  /* Set height of div to 100% */
+  height: 100vh;
+  /* The bottom three background CSS settings create parallax effect */
+  /*background-attachment: fixed; */
+  background-size: cover;
+  background-position: center;
+}
+#scene1{
+  /* Set background image of bakery section using url() function */
+  background-image: url('homepage.png');
+}
+#book{
+  /* Set background image of bakery section using url() function */
+  background-image: url('book.png');
+}
+#finalScene{
+  /* Set background image of bakery section using url() function */
+  background-image: url('finalscene.png');
 }

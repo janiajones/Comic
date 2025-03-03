@@ -3,15 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Underwater Scene</title>
+  <title>Comic Strip</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <!-- navigation bar -->
+    <div id="nav">
+      <a href="#top-frame"><div class="nav-btn" id="story1"></div> </a>
+      <div class="nav-btn" id="story2"></div>
+      <div class="nav-btn" id="story3"></div>
+    </div>
 
   <div id="frames-container">
     
     <!-- FRAME TEMPLATE: Duplicate a frame to add a new scene -->
     <!-- Ensure each frame has a unique ID (e.g., id="middle-frame") -->
+
+    <div class="frame" id="scene1">
+      <!-- nothing for now -->
+      <button type="button" class="nature-book" id="open-book-button">Open Book!
+      </button>
+    </div>
 
     <!-- Top Frame -->
     <div class="frame" id="top-frame">
@@ -112,6 +124,9 @@
       <audio id="middle-audio" src="new_sound.mp3"></audio>
     </div>
     -->
+    <div class="frame" id="finalScene">
+      <!-- nothing for now -->
+    </div>
 
   </div>
 

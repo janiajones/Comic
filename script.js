@@ -118,4 +118,68 @@ document.addEventListener("DOMContentLoaded", () => {
       bottomAudioButton.textContent = "Play Water Sound";
     }
   });
+  //Jania's code starting here
+  //newButton.style.whiteSpace = "pre-line";
+
+  const openBookButton = document.getElementById("open-book-button");
+  const scene1 = document.getElementById("scene1");
+
+  openBookButton.addEventListener("click", () => {
+    // Change the background image of scene1 to book.png
+    openBookButton.style.display = "none";
+    scene1.style.backgroundImage = "url('book.png')";
+
+     if (!document.getElementById("button1")) {
+      // Create and append three new buttons directly to scene1
+      for (let i = 1; i <= 4; i++) {
+        const newButton = document.createElement("button");
+        if (i == 1){
+          newButton.textContent = `Let's go\nswimming!`;
+          newButton.id = `ocean`;
+          newButton.style.position = "absolute";
+          newButton.style.top = "410px";    // 50px from the top of the container
+          newButton.style.left = "380px";
+          newButton.addEventListener("click", () => {
+          //should jump to that part of the story
+            document.getElementById("top-frame").scrollIntoView({ behavior: "smooth" });
+        });
+        }
+        if (i == 2){
+          newButton.innerHTML = `I'm ready<br>to go hiking!`;
+          newButton.id = `forest`;
+          newButton.style.position = "absolute";
+          newButton.style.top = "575px";    // 50px from the top of the container
+          newButton.style.left = "410px";
+          newButton.addEventListener("click", () => {
+          //should jump to that part of the story
+        });
+        }
+        if (i == 3){
+          newButton.innerHTML = `A safari in the desert, nice!`;
+          newButton.id = `desert`;
+          newButton.style.position = "absolute";
+          newButton.style.top = "115px";    // 50px from the top of the container
+          newButton.style.left = "820px";
+          newButton.addEventListener("click", () => {
+          //should jump to that part of the story
+        });
+        }
+        if (i == 4){
+          newButton.innerHTML = `Return to library`;
+          newButton.id = `home`;
+          newButton.style.position = "absolute";
+          newButton.style.top = "20px";    // 50px from the top of the container
+          newButton.style.left = "10px";
+          newButton.addEventListener("click", () => {
+          scene1.style.backgroundImage = "url('homepage.png')";
+          desert.style.display = "none";
+          forest.style.display = "none";
+          ocean.style.display = "none";
+          home.style.display = "none";
+        });
+        }
+        scene1.appendChild(newButton);
+      }
+    }
+  });
 });
