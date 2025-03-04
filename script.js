@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
           newButton.id = `ocean`;
           newButton.style.position = "absolute";
           newButton.style.top = "410px";    // 50px from the top of the container
-          newButton.style.left = "380px";
+          newButton.style.left = "375px";
           newButton.addEventListener("click", () => {
           //should jump to that part of the story
             document.getElementById("top-frame").scrollIntoView({ behavior: "smooth" });
@@ -148,8 +148,8 @@ document.addEventListener("DOMContentLoaded", () => {
           newButton.innerHTML = `I'm ready<br>to go hiking!`;
           newButton.id = `forest`;
           newButton.style.position = "absolute";
-          newButton.style.top = "575px";    // 50px from the top of the container
-          newButton.style.left = "410px";
+          newButton.style.top = "555px";    // 50px from the top of the container
+          newButton.style.left = "400px";
           newButton.addEventListener("click", () => {
           //should jump to that part of the story
         });
