@@ -162,6 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
           newButton.style.left = "400px";
           newButton.addEventListener("click", () => {
           //should jump to that part of the story
+            document.getElementById("frame3-container").scrollIntoView({ behavior: "smooth" });
         });
         }
         if (i == 3){
@@ -172,6 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
           newButton.style.left = "820px";
           newButton.addEventListener("click", () => {
           //should jump to that part of the story
+            document.getElementById("scene3").scrollIntoView({ behavior: "smooth" });
         });
         }
         if (i == 4){
