@@ -74,6 +74,7 @@ button {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
 button:hover {

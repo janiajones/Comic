@@ -176,6 +176,8 @@ document.addEventListener("DOMContentLoaded", () => {
           forest.style.display = "none";
           ocean.style.display = "none";
           home.style.display = "none";
+          openBookButton.style.display = "block";
+
         });
         }
         scene1.appendChild(newButton);
