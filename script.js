@@ -1,4 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+    // 1) Declare & track userHasInteracted:
+    let userHasInteracted = false;
+
+    // 2) On first click anywhere, set userHasInteracted = true
+    document.addEventListener("click", () => {
+      userHasInteracted = true;
+      console.log("User gesture established; hover-based audio now allowed for frames 3 & 4.");
+    }, { once: true });
+    
   // === Existing Movement / Dialogue Code ===
   const mermaid = document.getElementById("mermaid");
   const mermaidContainer = document.getElementById("mermaid-container");
@@ -184,4 +194,111 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
+
+    // === Frame 3 Audio & Bird Logic (Hover) ===
+  const frame3 = document.getElementById("frame3");
+  const frame3Container = document.getElementById("frame3-container");
+  const frame3Audio = document.getElementById("frame3Audio");
+
+
+  frame3.addEventListener("mouseenter", () => {
+    if (!userHasInteracted) {
+      console.warn("User must click on the page first to allow audio playback (Frame 3).");
+      return;
+    }
+
+
+    if (frame3Audio.paused) {
+      frame3Audio.play().catch(err => {
+        console.warn("Audio playback was prevented for frame3Audio:", err);
+      });
+    }
+
+
+    // Spawn birds
+    for (let i = 0; i < 3; i++) {
+      createBird();
+    }
+  });
+
+
+  frame3.addEventListener("mouseleave", () => {
+    frame3Audio.pause();
+    frame3Audio.currentTime = 0; // reset so it restarts on next hover
+  });
+
+
+  function createBird() {
+    const bird = document.createElement("img");
+    bird.src = "bird.jpeg";
+    bird.classList.add("bird");
+
+
+    // Random start position
+    bird.style.left = `${Math.random() * 10 - 5}%`;
+    bird.style.bottom = `${Math.random() * 50 + 20}%`;
+
+
+    frame3Container.appendChild(bird);
+
+
+    // Remove bird after its animation completes
+    setTimeout(() => {
+      bird.remove();
+    }, 3000);
+  }
+
+
+  // === Frame 4 Audio & Orange Logic (Hover) ===
+  const frame4 = document.getElementById("frame4");
+  const frame4Container = document.getElementById("frame4-container");
+  const frame4Audio = document.getElementById("frame4Audio");
+
+
+  frame4.addEventListener("mouseenter", () => {
+    if (!userHasInteracted) {
+      console.warn("User must click on the page first to allow audio playback (Frame 4).");
+      return;
+    }
+
+
+    if (frame4Audio.paused) {
+      frame4Audio.play().catch(err => {
+        console.warn("Audio playback was prevented for frame4Audio:", err);
+      });
+    }
+
+
+    // Spawn oranges at the top portion of frame4
+    for (let i = 0; i < 3; i++) {
+      createOrange();
+    }
+  });
+
+
+  frame4.addEventListener("mouseleave", () => {
+    frame4Audio.pause();
+    frame4Audio.currentTime = 0; // reset so it restarts on next hover
+  });
+
+
+  function createOrange() {
+    const orange = document.createElement("img");
+    orange.src = "oranges.png"; 
+    orange.classList.add("orange");
+
+
+    // Position near the top of frame4: top 5% to 15%, random left 0% to 80% (arbitrary).
+    orange.style.top = `${Math.random() * 10 + 5}%`;  // 5% to 15% from the top
+    orange.style.left = `${Math.random() * 80}%`;     // 0% to 80% from the left
+
+
+    frame4Container.appendChild(orange);
+
+
+    setTimeout(() => {
+      orange.remove();
+    }, 9000);
+  }
+
 });
