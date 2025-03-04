@@ -299,6 +299,24 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       orange.remove();
     }, 9000);
-  }
+    }
+
+    const thirdPanel = document.getElementById('third-panel');
+    document.addEventListener("DOMContentLoaded", function () {
+        const extraImageContainer = document.querySelector(".fullscreen-image-container");
+
+        function checkVisibility() {
+            const rect = extraImageContainer.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+
+            if (rect.top < windowHeight * 0.9) {
+                extraImageContainer.classList.add("visible");
+            }
+        }
+
+        window.addEventListener("scroll", checkVisibility);
+        checkVisibility(); // Check on page load
+
+    });
 
 });
