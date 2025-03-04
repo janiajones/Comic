@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function createBird() {
     const bird = document.createElement("img");
-    bird.src = "bird.jpeg";
+    bird.src = "birds.png";
     bird.classList.add("bird");
 
 
