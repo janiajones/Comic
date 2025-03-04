@@ -7,12 +7,16 @@
 
 /* Allow scrolling between frames */
 html, body {
-  width: 100%;
-  height: auto;
-  min-height: 100%;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  font-family: "Comic Sans MS", "Bangers", cursive;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    font-family: "Comic Sans MS", "Bangers", cursive;
 }
 /* 
 Navigation Bar 
@@ -286,5 +290,85 @@ button:focus {
  width: 60px;
  pointer-events: none;
  z-index: 9999;
+}
+
+/* for the desert pictures */
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.image-box {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+    .image-box:hover {
+        flex: 1.5;
+        z-index: 2;
+    }
+
+    .image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .image-box:hover img {
+        transform: scale(1.05);
+    }
+
+.fullscreen-image-container {
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px) scale(0.9); /* Start slightly smaller */
+    transition: opacity 1s ease, transform 1s ease-in-out;
+}
+
+    /* Apply the animation when visible */
+    .fullscreen-image-container.visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+/* Floating & glowing effect */
+.fullscreen-image {
+    width: 100vw; /* Full screen width */
+    height: 100vh; /* Full screen height */
+    object-fit: cover; /* Ensures image covers the entire screen */
+    filter: blur(3px); /* Initial blur effect */
+    animation: floatUpDown 4s ease-in-out infinite alternate, glowEffect 2s infinite alternate;
+}
+
+/* Floating effect: moves image up & down */
+@keyframes floatUpDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Glow effect: subtle brightness change */
+@keyframes glowEffect {
+    0% {
+        filter: brightness(1) blur(1px);
+    }
+
+    100% {
+        filter: brightness(1.2) blur(1px);
+    }
 }
 
